@@ -1,8 +1,15 @@
 # format for dictionary works as the following: word: (chaotic-lawful) (evil-good)
 
 import json
+import os
 
-with open('ignore_files\\allignDict.json', 'r') as f:
+dict_path = str
+if os.name == "posix": 
+    dict_path = "ignore_files/allignDict.json"
+elif os.name == "nt":
+    dict_path = "ignore_files\\allignDict.json"
+
+with open(dict_path, 'r') as f:
     align = json.load(f)
 
 
